@@ -106,11 +106,9 @@ export function useAppointments(): UseAppointments {
       refetchOnMount: true,
       refetchOnWindowFocus: true,
       refetchOnReconnect: true,
-      refetchInterval: 3000, // 60 seconds
+      refetchInterval: 60000, // 60 seconds
     },
   );
-
-  /** ****************** END 3: useQuery  ******************************* */
 
   return { appointments, monthYear, updateMonthYear, showAll, setShowAll };
 }
