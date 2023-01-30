@@ -4,6 +4,7 @@ import type { User } from '../../../../../shared/types';
 import { axiosInstance, getJWTHeader } from '../../../axiosInstance';
 import { useUser } from './useUser';
 import { useCustomToast } from '../../app/hooks/useCustomToast';
+// eslint-disable-next-line import/no-unresolved
 import { queryKeys } from 'react-query/constants';
 
 // for when we need a server function
