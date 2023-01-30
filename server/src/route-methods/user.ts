@@ -99,6 +99,7 @@ export async function update(
   try {
     const { id } = req.params;
     const { patch } = req.body;
+
     if (!patch) {
       return res
         .status(400)

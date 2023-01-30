@@ -78,7 +78,6 @@ async function updateItem<DataType extends JsonDataType>(
 ): Promise<DataType> {
   try {
     const items = await getJSONfromFile<DataType>(filename);
-
     // find the item
     const foundItems = items.filter((item) => item.id === itemId);
     if (foundItems.length !== 1) {
