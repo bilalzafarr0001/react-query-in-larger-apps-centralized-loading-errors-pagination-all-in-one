@@ -1,3 +1,4 @@
+// @ts-check
 import {
   Box,
   Center,
@@ -49,7 +50,7 @@ export function Card({
           </Text>
         </Box>
         <Stack pt={10}>
-          <Heading textAlign="center" fontSize="2xl">
+          <Heading role="heading" textAlign="center" fontSize="2xl">
             {itemName}
           </Heading>
           {cardContents}

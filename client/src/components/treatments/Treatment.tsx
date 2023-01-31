@@ -1,3 +1,4 @@
+// @ts-check
 import { Text } from '@chakra-ui/react';
 import { ReactElement } from 'react';
 
