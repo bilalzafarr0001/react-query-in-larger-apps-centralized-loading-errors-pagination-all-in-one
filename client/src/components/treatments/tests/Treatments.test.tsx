@@ -4,8 +4,8 @@ import { Treatments } from '../Treatments';
 
 test('renders response from query', async () => {
   renderWithQueryClient(<Treatments />);
-  const treatmentTitles = await screen.findByRole('Heading', {
-    name: 'Massage',
+  const treatmentTitles = await screen.findAllByRole('heading', {
+    name: /massage|facial|scrub/i,
   });
-  expect(treatmentTitles).toHaveLength(1);
+  expect(treatmentTitles).toHaveLength(3);
 });
