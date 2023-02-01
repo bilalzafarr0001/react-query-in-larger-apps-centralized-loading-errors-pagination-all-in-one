@@ -1,8 +1,22 @@
-// import { act, renderHook } from '@testing-library/react-hooks';
-
-// import { createWrapper } from '../../../test-utils';
+import { act, renderHook } from '@testing-library/react-hooks';
+import { createQueryClientWrapper } from '../../../test-utils';
 import { useAppointments } from '../hooks/useAppointments';
 
 test('filter appointments by availability', async () => {
-  // test goes here
+  const { result, waitFor } = renderHook(useAppointments, {
+    wrapper: createQueryClientWrapper(),
+  });
+
+  await waitFor(() => result.current.appointments !== {});
+  const filteredAppointmentsLength = Object.keys(
+    result.current.appointments,
+  ).length;
+
+  act(() => result.current.setShowAll(true));
+
+  await waitFor(
+    () =>
+      Object.keys(result.current.appointments).length >
+      filteredAppointmentsLength,
+  );
 });

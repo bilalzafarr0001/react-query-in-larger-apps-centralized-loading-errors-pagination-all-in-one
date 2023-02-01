@@ -8,6 +8,7 @@ setLogger({
   warn: console.warn,
   error: () => {},
 });
+
 const generateTestQueryClient = () => {
   const client = generateQueryClient();
   const options = client.getDefaultOptions();
@@ -28,7 +29,7 @@ export function renderWithQueryClient(
 //from https://tkdodo.eu/blog/testing-react-query#for-custom-hooks
 
 export const createQueryClientWrapper = (): React.FC => {
-  const queryClient = generateQueryClient();
+  const queryClient = generateTestQueryClient();
   return ({ children }) => (
     <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
   );
